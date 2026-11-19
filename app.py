@@ -14,7 +14,10 @@ district_catalog = bundle["district_catalog"]
 crop_history = bundle["crop_history"]
 crop_labels = bundle.get("crop_labels", {})
 
-app = Flask(__name__, static_folder=str(ROOT / "astrava"))
+dashboard_folder = ROOT / "astrava"
+if not dashboard_folder.exists():
+    dashboard_folder = ROOT
+app = Flask(__name__, static_folder=str(dashboard_folder))
 
 
 @app.route("/")
