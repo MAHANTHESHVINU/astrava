@@ -2,6 +2,10 @@
 
 CropSight AI is a trained crop-yield prediction dashboard built with Flask, scikit-learn, Chart.js, and the ICRISAT district-level datasets.
 
+## Live dashboard
+
+https://astrava-sooty.vercel.app
+
 The dashboard provides:
 
 - 43 crop yield models where sufficient data is available
