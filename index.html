@@ -15,11 +15,11 @@
   --accent:#00e5a0;--blue:#3b9eff;--amber:#f5a623;
   --rose:#ff5f7e;--violet:#9f7ffe;--teal:#00d4c8;
   --green:#2dba4e;--pink:#ff6eb4;--orange:#ff8c42;
-  --sidebar-w:320px;
+  --sidebar-w:520px;
   --header-h:60px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{min-width:1280px;}
+html{min-width:960px;}
 html,body{height:100%;background:var(--bg0);color:#fff;font-family:'Share Tech Mono',monospace;overflow-x:auto;}
 
 /* ── Header ──────────────────────────────────────────────── */
@@ -49,19 +49,19 @@ header{
   background:var(--bg1);border-right:2px solid var(--border);
   display:flex;flex-direction:column;overflow-y:auto;
 }
-.sidebar::-webkit-scrollbar{width:4px;}
-.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+.sidebar::-webkit-scrollbar{width:7px;}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
 
 .section-title{
   padding:14px 20px 10px;font-size:11px;color:var(--accent);
   letter-spacing:3px;border-bottom:1px solid var(--border);
 }
-.field-group{padding:10px 20px;}
-.field-label{font-size:12px;color:#ccc;margin-bottom:7px;letter-spacing:1px;display:block;}
+.field-group{padding:12px 24px;}
+.field-label{font-size:14px;color:#ccc;margin-bottom:9px;letter-spacing:1px;display:block;}
 
 select{
   width:100%;background:#0d1829;color:#fff;border:1px solid var(--border);
-  padding:10px 12px;font-family:'Share Tech Mono',monospace;font-size:12px;
+  padding:14px 16px;font-family:'Share Tech Mono',monospace;font-size:15px;
   cursor:pointer;outline:none;border-radius:3px;
 }
 select:focus{border-color:var(--accent);}
@@ -69,32 +69,29 @@ select option{background:#0d1829;color:#fff;}
 select option:disabled{color:#555;}
 
 /* Crop category tabs */
-.cat-tabs{display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap;}
+.cat-tabs{display:flex;gap:4px;margin-bottom:7px;overflow-x:auto;padding-bottom:2px;}
 .cat-tab{
-  flex:1;min-width:calc(25% - 4px);background:var(--bg2);color:#aaa;
-  border:1px solid var(--border);padding:7px 3px;
-  font-family:'Share Tech Mono',monospace;font-size:10px;
+  flex:1 0 92px;min-width:92px;background:var(--bg2);color:#aaa;
+  border:1px solid var(--border);padding:12px 8px;
+  font-family:'Share Tech Mono',monospace;font-size:12px;
   cursor:pointer;border-radius:3px;text-align:center;transition:all .15s;white-space:nowrap;
 }
 .cat-tab:hover{color:var(--teal);border-color:var(--teal);}
 .cat-active{background:var(--panel)!important;color:var(--accent)!important;border-color:var(--accent)!important;}
 
-/* Crop buttons grid */
-.crop-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;}
-.crop-btn{
-  background:var(--bg2);color:#fff;border:1px solid var(--border);
-  padding:8px 4px;font-family:'Share Tech Mono',monospace;font-size:10px;
-  cursor:pointer;transition:all .15s;border-radius:3px;text-align:center;line-height:1.4;
+/* Crop selector */
+.crop-grid{width:100%;}
+.crop-grid select{
+  height:52px;
+  text-overflow:ellipsis;
 }
-.crop-btn:hover{background:var(--panel);}
-.crop-sel{background:var(--panel)!important;font-weight:bold;}
 
 /* Season buttons */
 .btn-group{display:flex;flex-wrap:wrap;gap:5px;}
 .season-btn{
   flex:1;min-width:calc(50% - 5px);background:var(--bg2);color:#fff;
-  border:1px solid var(--border);padding:9px 6px;
-  font-family:'Share Tech Mono',monospace;font-size:11px;
+  border:1px solid var(--border);padding:14px 10px;
+  font-family:'Share Tech Mono',monospace;font-size:14px;
   cursor:pointer;transition:all .2s;border-radius:3px;text-align:center;
 }
 .season-btn:hover{border-color:var(--teal);color:var(--teal);}
@@ -103,27 +100,31 @@ select option:disabled{color:#555;}
 /* Year slider */
 .year-display{
   text-align:center;font-family:'Orbitron',sans-serif;
-  font-size:32px;font-weight:700;color:var(--accent);
-  padding:6px 0;letter-spacing:5px;
+  font-size:44px;font-weight:700;color:var(--accent);
+  padding:10px 0;letter-spacing:6px;
 }
-input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;background:transparent;height:6px;}
+input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;background:transparent;height:10px;}
 .year-range{display:flex;justify-content:space-between;font-size:11px;color:#aaa;margin-top:4px;}
 
 /* Climate inputs */
 .climate-input{
   width:100%;background:#0d1829;color:#fff;border:1px solid var(--border);
-  padding:9px 12px;font-family:'Share Tech Mono',monospace;font-size:12px;
+  padding:14px 16px;font-family:'Share Tech Mono',monospace;font-size:15px;
   outline:none;border-radius:3px;margin-bottom:7px;
 }
 .climate-input:focus{border-color:var(--accent);}
 .climate-input::placeholder{color:#444;}
+.climate-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.climate-grid .field-label{margin-bottom:6px;}
 
 /* Predict button */
 .predict-btn{
   margin:10px 20px 12px;background:var(--accent);color:#04090f;border:none;
-  padding:15px;width:calc(100% - 40px);font-family:'Orbitron',sans-serif;
-  font-size:13px;font-weight:700;letter-spacing:2px;cursor:pointer;
+  padding:20px;width:calc(100% - 40px);font-family:'Orbitron',sans-serif;
+  font-size:16px;font-weight:700;letter-spacing:2px;cursor:pointer;
   transition:all .2s;border-radius:3px;
+  position:sticky;bottom:10px;z-index:20;
+  box-shadow:0 8px 24px rgba(4,9,15,.75);
 }
 .predict-btn:hover{background:var(--teal);box-shadow:0 6px 24px rgba(0,229,160,.4);}
 .predict-btn:active{transform:scale(.98);}
@@ -177,37 +178,87 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;backgroun
 .flow-node.risk-node-MEDIUM{border-color:var(--amber);}
 .flow-node.risk-node-HIGH{border-color:var(--rose);}
 
-/* ── Charts grid — 2 rows, spacious ──────────────────────── */
-.charts-grid{
+/* ── Chart sheet slider ──────────────────────────────────── */
+.charts-slider{
   flex:1;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  background:var(--bg0);
+  overflow:hidden;
+}
+.chart-viewport{
+  flex:1;
+  min-height:0;
+  overflow:hidden;
+  background:var(--border);
+}
+.chart-track{
+  height:100%;
+  display:flex;
+  transition:transform .35s cubic-bezier(.22,.61,.36,1);
+  will-change:transform;
+}
+.chart-slide{
+  flex:0 0 100%;
+  min-width:100%;
+  height:100%;
   display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  grid-template-rows:1fr 1fr;
   gap:3px;
   background:var(--border);
-  overflow:hidden;
-  min-height:0;
+}
+.chart-slide-trend{
+  grid-template-columns:minmax(0,1.55fr) minmax(220px,.45fr);
+}
+.chart-slide-compare{
+  grid-template-columns:1fr 1fr;
+}
+.chart-slide-env{
+  grid-template-columns:minmax(320px,1fr);
 }
 .chart-panel{
   background:var(--panel);
-  padding:20px 22px 16px;
+  padding:14px 16px 12px;
   display:flex;flex-direction:column;
   min-height:0;min-width:0;
 }
-.chart-panel.wide{grid-column:span 2;}
+.chart-slide-env .chart-panel{max-width:none;}
 .chart-panel-title{
-  font-size:13px;color:#fff;letter-spacing:1px;
-  margin-bottom:12px;padding-bottom:8px;
+  font-size:12px;color:#fff;letter-spacing:1px;
+  margin-bottom:8px;padding-bottom:6px;
   border-bottom:1px solid var(--border);
   font-family:'Rajdhani',sans-serif;font-weight:600;
   flex-shrink:0;
 }
 canvas{flex:1;min-height:0!important;min-width:0!important;}
+.chart-controls{
+  height:46px;
+  flex:0 0 46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  background:var(--bg1);
+  border-top:1px solid var(--border);
+}
+.slide-arrow{
+  width:38px;height:34px;border:1px solid var(--border);border-radius:3px;
+  background:var(--panel);color:var(--accent);cursor:pointer;
+  font-family:'Share Tech Mono',monospace;font-size:16px;
+}
+.slide-arrow:hover{border-color:var(--accent);background:var(--bg2);}
+.slide-dots{display:flex;align-items:center;gap:8px;}
+.slide-dot{
+  width:8px;height:8px;border:0;border-radius:50%;padding:0;
+  background:#43556d;cursor:pointer;
+}
+.slide-dot.active{width:24px;border-radius:4px;background:var(--accent);}
+.slide-name{min-width:120px;text-align:left;font-size:11px;color:#aaa;}
 
 /* Gauge */
 .gauge-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;}
-.gauge-circle{position:relative;width:180px;height:180px;}
-.gauge-circle canvas{position:absolute;top:0;left:0;width:180px!important;height:180px!important;}
+.gauge-circle{position:relative;width:150px;height:150px;}
+.gauge-circle canvas{position:absolute;top:0;left:0;width:150px!important;height:150px!important;}
 .gauge-value{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;}
 .gauge-number{font-family:'Orbitron',sans-serif;font-size:20px;font-weight:700;}
 .gauge-unit{font-size:11px;color:#aaa;margin-top:2px;}
@@ -256,7 +307,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:10000;
   <span class="sub" id="headerSub"> Crop Yield Prediction · MAPE ~11%</span>
   <div class="header-right">
     <span class="badge">MODEL v2.3</span>
-    <span class="badge">VotingRegressor</span>
+    <span class="badge">Ridge</span>
     <button class="pdf-btn" id="pdfBtn" onclick="downloadPDF()">⬇ PDF REPORT</button>
     <div class="lang-wrap">
       <span class="lang-lbl" id="lbl-lang">LANG</span>
@@ -295,7 +346,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:10000;
     <div class="field-group">
       <span class="field-label" id="lbl-crop">CROP</span>
       <div class="cat-tabs" id="catTabs"></div>
-      <div class="crop-grid" id="cropGrid"></div>
+      <div class="crop-grid"><select id="cropGrid"></select></div>
     </div>
 
     <div class="field-group">
@@ -310,17 +361,23 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:10000;
       <div class="btn-group" id="seasonBtns">
         <button class="season-btn" data-season="Kharif"     id="sb-kharif">Kharif</button>
         <button class="season-btn" data-season="Rabi"       id="sb-rabi">Rabi</button>
-        <button class="season-btn" data-season="Zaid"       id="sb-zaid">Zaid</button>
+        <button class="season-btn" data-season="Summer"     id="sb-summer">Summer</button>
         <button class="season-btn" data-season="Whole Year" id="sb-whole">Whole Year</button>
       </div>
     </div>
 
     <div style="margin:0 16px;border-top:1px solid var(--border);padding-top:9px;">
       <span class="field-label" id="lbl-climate">CLIMATE OVERRIDE (OPTIONAL)</span>
-      <span class="field-label" id="lbl-temp" style="color:#aaa;margin-top:6px;">Temperature (°C)</span>
-      <input class="climate-input" id="tempInput" type="number" placeholder="e.g. 28" min="0" max="50" step="0.5"/>
-      <span class="field-label" id="lbl-rain" style="color:#aaa;">Rainfall (mm)</span>
-      <input class="climate-input" id="rainInput" type="number" placeholder="e.g. 900" min="0" max="3000" step="10"/>
+      <div class="climate-grid">
+        <div>
+          <span class="field-label" id="lbl-temp" style="color:#aaa;margin-top:6px;">Temperature (°C)</span>
+          <input class="climate-input" id="tempInput" type="number" placeholder="e.g. 28" min="0" max="50" step="0.5"/>
+        </div>
+        <div>
+          <span class="field-label" id="lbl-rain" style="color:#aaa;margin-top:6px;">Rainfall (mm)</span>
+          <input class="climate-input" id="rainInput" type="number" placeholder="e.g. 900" min="0" max="3000" step="10"/>
+        </div>
+      </div>
     </div>
 
     <button class="predict-btn" id="predictBtn">⬥ PREDICT YIELD</button>
@@ -387,36 +444,56 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:10000;
       </div>
     </div>
 
-    <div class="charts-grid">
-      <div class="chart-panel wide">
-        <div class="chart-panel-title" id="pt-trend">📈 HISTORICAL YIELD TREND + FORECAST TO 2030</div>
-        <canvas id="trendChart"></canvas>
-      </div>
-      <div class="chart-panel">
-        <div class="chart-panel-title" id="pt-gauge">🎯 PREDICTION + 95% CI</div>
-        <div class="gauge-wrap">
-          <div class="gauge-circle">
-            <canvas id="gaugeChart"></canvas>
-            <div class="gauge-value">
-              <div class="gauge-number" id="gaugeNum">—</div>
-              <div class="gauge-unit" id="gaugeUnit">kg/ha</div>
+    <div class="charts-slider" id="chartsSlider">
+      <div class="chart-viewport" id="chartViewport">
+        <div class="chart-track" id="chartTrack">
+          <div class="chart-slide chart-slide-trend">
+            <div class="chart-panel">
+              <div class="chart-panel-title" id="pt-trend">📈 HISTORICAL YIELD TREND + FORECAST TO 2030</div>
+              <canvas id="trendChart"></canvas>
+            </div>
+            <div class="chart-panel">
+              <div class="chart-panel-title" id="pt-gauge">🎯 PREDICTION + 95% CI</div>
+              <div class="gauge-wrap">
+                <div class="gauge-circle">
+                  <canvas id="gaugeChart"></canvas>
+                  <div class="gauge-value">
+                    <div class="gauge-number" id="gaugeNum">—</div>
+                    <div class="gauge-unit" id="gaugeUnit">kg/ha</div>
+                  </div>
+                </div>
+                <div class="gauge-ci" id="gaugeCI">—</div>
+                <div class="risk-badge risk-LOW" id="gaugeBadge">—</div>
+              </div>
             </div>
           </div>
-          <div class="gauge-ci" id="gaugeCI">—</div>
-          <div class="risk-badge risk-LOW" id="gaugeBadge">—</div>
+          <div class="chart-slide chart-slide-compare">
+            <div class="chart-panel">
+              <div class="chart-panel-title" id="pt-crop">🌿 CROP COMPARISON</div>
+              <canvas id="cropChart"></canvas>
+            </div>
+            <div class="chart-panel">
+              <div class="chart-panel-title" id="pt-season">🌦 SEASON COMPARISON</div>
+              <canvas id="seasonChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-slide chart-slide-env">
+            <div class="chart-panel">
+              <div class="chart-panel-title" id="pt-env">🌡 GROWING CONDITION PROFILE</div>
+              <canvas id="envChart"></canvas>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="chart-panel">
-        <div class="chart-panel-title" id="pt-crop">🌿 CROP COMPARISON</div>
-        <canvas id="cropChart"></canvas>
-      </div>
-      <div class="chart-panel">
-        <div class="chart-panel-title" id="pt-season">🌦 SEASON COMPARISON</div>
-        <canvas id="seasonChart"></canvas>
-      </div>
-      <div class="chart-panel">
-        <div class="chart-panel-title" id="pt-env">🌡 GROWING CONDITION PROFILE</div>
-        <canvas id="envChart"></canvas>
+      <div class="chart-controls">
+        <button class="slide-arrow" id="slidePrev" type="button" aria-label="Previous chart sheet">‹</button>
+        <div class="slide-dots" id="slideDots" aria-label="Chart sheet navigation">
+          <button class="slide-dot active" type="button" data-slide="0" aria-label="Trend sheet"></button>
+          <button class="slide-dot" type="button" data-slide="1" aria-label="Comparison sheet"></button>
+          <button class="slide-dot" type="button" data-slide="2" aria-label="Environment sheet"></button>
+        </div>
+        <span class="slide-name" id="slideName">Trend & Prediction</span>
+        <button class="slide-arrow" id="slideNext" type="button" aria-label="Next chart sheet">›</button>
       </div>
     </div>
 
@@ -426,7 +503,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:10000;
       <span class="sep">|</span>
       <span id="statusInfo" style="color:var(--teal);">—</span>
       <span class="sep">|</span>
-      <span style="color:#555;">VotingRegressor [HGBR · RF · Ridge]</span>
+      <span style="color:#555;">Ridge Regression</span>
     </div>
   </main>
 </div>
@@ -451,7 +528,7 @@ en:{
   climate:"CLIMATE OVERRIDE (OPTIONAL)", temp:"Temperature (°C)", rain:"Rainfall (mm)",
   predictBtn:"⬥ PREDICT YIELD",
   ci:"CONF. INTERVAL", vs:"VS AVERAGE", mape:"MODEL MAPE",
-  kharif:"Kharif", rabi:"Rabi", zaid:"Zaid", whole:"Whole Year",
+  kharif:"Kharif", rabi:"Rabi", summer:"Summer", whole:"Whole Year",
   selState:"-- Select State --", selDistrict:"-- Select District --",
   statusReady:"Ready — select inputs and click Predict",
   loadTitle:"COMPUTING PREDICTION", loadSub:"Running ensemble model...",
@@ -501,7 +578,7 @@ hi:{
   climate:"जलवायु ओवरराइड (वैकल्पिक)", temp:"तापमान (°C)", rain:"वर्षा (मिमी)",
   predictBtn:"⬥ उपज भविष्यवाणी करें",
   ci:"विश्वास अंतराल", vs:"औसत से तुलना", mape:"मॉडल MAPE",
-  kharif:"खरीफ", rabi:"रबी", zaid:"जायद", whole:"पूरा वर्ष",
+  kharif:"खरीफ", rabi:"रबी", summer:"Summer", whole:"Whole Year",
   selState:"-- राज्य चुनें --", selDistrict:"-- जिला चुनें --",
   statusReady:"तैयार — इनपुट चुनें और पूर्वानुमान करें",
   loadTitle:"पूर्वानुमान गणना", loadSub:"एंसेम्बल मॉडल चल रहा है...",
@@ -545,7 +622,7 @@ kn:{
   climate:"ಹವಾಮಾನ ಓವರ್‌ರೈಡ್ (ಐಚ್ಛಿಕ)", temp:"ತಾಪಮಾನ (°C)", rain:"ಮಳೆ (ಮಿಮೀ)",
   predictBtn:"⬥ ಇಳುವರಿ ಮುನ್ಸೂಚನೆ",
   ci:"ವಿಶ್ವಾಸ ಮಿತಿ", vs:"ಸರಾಸರಿಗೆ ಹೋಲಿಕೆ", mape:"ಮಾದರಿ MAPE",
-  kharif:"ಖರೀಫ್", rabi:"ರಬಿ", zaid:"ಜಾಯಿದ್", whole:"ಪೂರ್ಣ ವರ್ಷ",
+  kharif:"ಖರೀಫ್", rabi:"ರಬಿ", summer:"Summer", whole:"Whole Year",
   selState:"-- ರಾಜ್ಯ ಆಯ್ಕೆ ಮಾಡಿ --", selDistrict:"-- ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ --",
   statusReady:"ಸಿದ್ಧ — ಇನ್‌ಪುಟ್ ಆಯ್ಕೆ ಮಾಡಿ ಮತ್ತು ಮುನ್ಸೂಚನೆ ಮಾಡಿ",
   loadTitle:"ಮುನ್ಸೂಚನೆ ಲೆಕ್ಕಾಚಾರ", loadSub:"ಎನ್‌ಸೆಂಬಲ್ ಮಾದರಿ ಚಾಲನೆ...",
@@ -589,7 +666,7 @@ te:{
   climate:"వాతావరణ ఓవర్‌రైడ్ (ఐచ్ఛికం)", temp:"ఉష్ణోగ్రత (°C)", rain:"వర్షపాతం (మి.మీ.)",
   predictBtn:"⬥ దిగుబడి అంచనా",
   ci:"విశ్వాస వ్యవధి", vs:"సగటుతో పోలిక", mape:"మోడల్ MAPE",
-  kharif:"ఖరీఫ్", rabi:"రబీ", zaid:"జాయిద్", whole:"సంవత్సరమంతా",
+  kharif:"ఖరీఫ్", rabi:"రబీ", summer:"Summer", whole:"Whole Year",
   selState:"-- రాష్ట్రం ఎంచుకోండి --", selDistrict:"-- జిల్లా ఎంచుకోండి --",
   statusReady:"సిద్ధం — ఇన్‌పుట్ ఎంచుకుని అంచనా వేయండి",
   loadTitle:"అంచనా గణన", loadSub:"మోడల్ అమలవుతోంది...",
@@ -633,7 +710,7 @@ ta:{
   climate:"காலநிலை மேலெழுதல் (விருப்பமானது)", temp:"வெப்பநிலை (°C)", rain:"மழைவீழ்ச்சி (மிமீ)",
   predictBtn:"⬥ விளைச்சல் கணிக்க",
   ci:"நம்பகமான இடைவெளி", vs:"சராசரியுடன் ஒப்பீடு", mape:"மாடல் MAPE",
-  kharif:"கரீஃப்", rabi:"ரபி", zaid:"ஜாய்த்", whole:"முழு ஆண்டு",
+  kharif:"கரீஃப்", rabi:"ரபி", summer:"Summer", whole:"Whole Year",
   selState:"-- மாநிலம் தேர்ந்தெடு --", selDistrict:"-- மாவட்டம் தேர்ந்தெடு --",
   statusReady:"தயார் — உள்ளீடுகளை தேர்ந்தெடுத்து கணிக்கவும்",
   loadTitle:"கணிப்பு கணக்கிடுகிறது", loadSub:"மாடல் இயங்குகிறது...",
@@ -677,7 +754,7 @@ mr:{
   climate:"हवामान ओव्हरराइड (पर्यायी)", temp:"तापमान (°C)", rain:"पाऊस (मिमी)",
   predictBtn:"⬥ उत्पादन अंदाज करा",
   ci:"विश्वास अंतराल", vs:"सरासरीशी तुलना", mape:"मॉडेल MAPE",
-  kharif:"खरीप", rabi:"रब्बी", zaid:"झाइद", whole:"संपूर्ण वर्ष",
+  kharif:"खरीप", rabi:"रब्बी", summer:"Summer", whole:"Whole Year",
   selState:"-- राज्य निवडा --", selDistrict:"-- जिल्हा निवडा --",
   statusReady:"तयार — इनपुट निवडा आणि अंदाज करा",
   loadTitle:"अंदाज गणना", loadSub:"एन्सेम्बल मॉडेल चालू...",
@@ -721,7 +798,7 @@ gu:{
   climate:"હવામાન ઓવરરાઇડ (વૈકલ્પિક)", temp:"તાપમાન (°C)", rain:"વરસાદ (મિ.મી.)",
   predictBtn:"⬥ ઉત્પાદન અનુમાન",
   ci:"વિશ્વાસ અંતરાલ", vs:"સરેરાશ સાથે", mape:"મૉડેલ MAPE",
-  kharif:"ખરીફ", rabi:"રવિ", zaid:"ઝૈઇદ", whole:"આખું વર્ષ",
+  kharif:"ખરીફ", rabi:"રવિ", summer:"Summer", whole:"Whole Year",
   selState:"-- રાજ્ય પસંદ કરો --", selDistrict:"-- જિલ્લો પસંદ કરો --",
   statusReady:"તૈયાર — ઇનપુટ પસંદ કરો",
   loadTitle:"અનુમાન ગણતરી", loadSub:"મૉડેલ ચાલી રહ્યું...",
@@ -761,7 +838,7 @@ pa:{
   climate:"ਮੌਸਮ ਓਵਰਰਾਈਡ (ਵਿਕਲਪਿਕ)", temp:"ਤਾਪਮਾਨ (°C)", rain:"ਵਰਖਾ (ਮਿਮੀ)",
   predictBtn:"⬥ ਝਾੜ ਭਵਿੱਖਬਾਣੀ",
   ci:"ਭਰੋਸਾ ਅੰਤਰਾਲ", vs:"ਔਸਤ ਨਾਲ ਤੁਲਨਾ", mape:"ਮਾਡਲ MAPE",
-  kharif:"ਖਰੀਫ਼", rabi:"ਰਬੀ", zaid:"ਜ਼ਾਇਦ", whole:"ਪੂਰਾ ਸਾਲ",
+  kharif:"ਖਰੀਫ਼", rabi:"ਰਬੀ", summer:"Summer", whole:"Whole Year",
   selState:"-- ਰਾਜ ਚੁਣੋ --", selDistrict:"-- ਜ਼ਿਲ੍ਹਾ ਚੁਣੋ --",
   statusReady:"ਤਿਆਰ — ਇਨਪੁੱਟ ਚੁਣੋ",
   loadTitle:"ਭਵਿੱਖਬਾਣੀ ਗਣਨਾ", loadSub:"ਮਾਡਲ ਚੱਲ ਰਿਹਾ ਹੈ...",
@@ -801,7 +878,7 @@ bn:{
   climate:"জলবায়ু ওভাররাইড (ঐচ্ছিক)", temp:"তাপমাত্রা (°C)", rain:"বৃষ্টিপাত (মিমি)",
   predictBtn:"⬥ ফলন পূর্বানুমান",
   ci:"আস্থার ব্যবধান", vs:"গড়ের সাথে তুলনা", mape:"মডেল MAPE",
-  kharif:"খারিফ", rabi:"রবি", zaid:"জায়েদ", whole:"সারা বছর",
+  kharif:"খারিফ", rabi:"রবি", summer:"Summer", whole:"Whole Year",
   selState:"-- রাজ্য বেছে নিন --", selDistrict:"-- জেলা বেছে নিন --",
   statusReady:"প্রস্তুত — ইনপুট বেছে নিন",
   loadTitle:"পূর্বানুমান গণনা", loadSub:"মডেল চলছে...",
@@ -842,7 +919,7 @@ ml:{
   climate:"കാലാവസ്ഥ ഓവർറൈഡ് (ഐച്ഛികം)", temp:"താപനില (°C)", rain:"മഴ (മിമി)",
   predictBtn:"⬥ വിളവ് പ്രവചിക്കുക",
   ci:"വിശ്വാസ ഇടവേള", vs:"ശരാശരിയുമായി", mape:"മോഡൽ MAPE",
-  kharif:"ഖരീഫ്", rabi:"റബി", zaid:"സൈദ്", whole:"മുഴുവൻ വർഷം",
+  kharif:"ഖരീഫ്", rabi:"റബി", summer:"Summer", whole:"Whole Year",
   selState:"-- സംസ്ഥാനം തിരഞ്ഞെടുക്കുക --", selDistrict:"-- ജില്ല തിരഞ്ഞെടുക്കുക --",
   statusReady:"തയ്യാർ — ഇൻപുട്ടുകൾ തിരഞ്ഞെടുക്കുക",
   loadTitle:"പ്രവചനം കണക്കാക്കുന്നു", loadSub:"മോഡൽ പ്രവർത്തിക്കുന്നു...",
@@ -883,7 +960,7 @@ or:{
   climate:"ଜଳବାୟୁ ଓଭରରାଇଡ (ଐଚ୍ଛିକ)", temp:"ତାପମାତ୍ରା (°C)", rain:"ବୃଷ୍ଟିପାତ (ମିମି)",
   predictBtn:"⬥ ଅମଳ ପୂର୍ବାନୁମାନ",
   ci:"ବିଶ୍ୱାସ ବ୍ୟବଧାନ", vs:"ହାରାହାରି ସହ ତୁଳନା", mape:"ମଡେଲ MAPE",
-  kharif:"ଖରିଫ", rabi:"ରବି", zaid:"ଜାଇଦ", whole:"ସଂପୂର୍ଣ୍ଣ ବର୍ଷ",
+  kharif:"ଖରିଫ", rabi:"ରବି", summer:"Summer", whole:"Whole Year",
   selState:"-- ରାଜ୍ୟ ବାଛନ୍ତୁ --", selDistrict:"-- ଜିଲ୍ଲା ବାଛନ୍ତୁ --",
   statusReady:"ପ୍ରସ୍ତୁତ — ଇନ୍‌ପୁଟ୍ ବାଛନ୍ତୁ",
   loadTitle:"ପୂର୍ବାନୁମାନ ଗଣନା", loadSub:"ମଡେଲ ଚାଲୁଅଛି...",
@@ -984,16 +1061,16 @@ var CATEGORIES = [
   { key:"grains",  labelKey:"catGrains",
     crops:["rice","maize","sorghum","wheat","ragi","sunflower","groundnut","soybean"],
     colors:["#00e5a0","#f5a623","#d4a017","#e8c96a","#b87333","#ffd700","#cd853f","#8fbc8f"] },
-  { key:"veg",     labelKey:"catVeg",
-    crops:["tomato","onion","potato","brinjal","cabbage","cauliflower","chilli","carrot","beans","okra","cucumber","pumpkin"],
-    colors:["#ff5f7e","#c76db0","#b8860b","#8b008b","#2dba4e","#e0e0e0","#ff3300","#ff8c42","#228b22","#4caf50","#87ceeb","#ff9800"] },
-  { key:"flowers", labelKey:"catFlowers",
-    crops:["rose","marigold","jasmine","chrysanthemum","gerbera","tuberose","crossandra","dahlia"],
-    colors:["#ff6eb4","#ff9500","#fffacd","#dda0dd","#ff6347","#ffe4e1","#ff7043","#9c27b0"] },
   { key:"cash",    labelKey:"catCash",
-    crops:["cotton","chickpea","sugarcane","turmeric","ginger","arecanut","coconut","banana"],
-    colors:["#3b9eff","#9f7ffe","#00d4c8","#e5a820","#c8a97e","#8d6e63","#66bb6a","#ffcc02"] }
+    crops:["cotton","chickpea","sugarcane"],
+    colors:["#3b9eff","#9f7ffe","#00d4c8"] }
 ];
+
+var DATASET_CROP_LABELS={
+ rice:"Rice", wheat:"Wheat", sorghum:"Sorghum", ragi:"Finger Millet",
+ maize:"Maize", sunflower:"Sunflower", groundnut:"Groundnut", soybean:"Soyabean",
+ cotton:"Cotton", chickpea:"Chickpea", sugarcane:"Sugarcane"
+};
 
 var CROP_BASE = {
   rice:        {mean:2800,  std:520,   p05:1500,  p95:4200,  temp:27,rain:1200,humid:78,N:90, P:40,K:40, pH:6.2},
@@ -1034,46 +1111,10 @@ var CROP_BASE = {
   banana:      {mean:28000, std:5600,  p05:14000, p95:43000, temp:27,rain:1200,humid:75,N:100,P:75,K:300,pH:6.5}
 };
 
-var SEASON_FACTORS = {Kharif:1.05,Rabi:0.97,Zaid:0.90,"Whole Year":1.00};
+var SEASON_FACTORS = {Kharif:1.05,Rabi:0.97,Summer:0.90,"Whole Year":1.00};
 var RISK_COLORS    = {LOW:"#00e5a0",MEDIUM:"#f5a623",HIGH:"#ff5f7e"};
 
-var DISTRICTS = [
-  {name:"Dharwad",state:"Karnataka"},{name:"Belgaum",state:"Karnataka"},
-  {name:"Bijapur",state:"Karnataka"},{name:"Raichur",state:"Karnataka"},
-  {name:"Gulbarga",state:"Karnataka"},{name:"Hassan",state:"Karnataka"},
-  {name:"Mysore",state:"Karnataka"},{name:"Tumkur",state:"Karnataka"},
-  {name:"Bellary",state:"Karnataka"},{name:"Mandya",state:"Karnataka"},
-  {name:"Dakshina Kannada",state:"Karnataka"},{name:"Uttara Kannada",state:"Karnataka"},
-  {name:"Shimoga",state:"Karnataka"},{name:"Chikmagalur",state:"Karnataka"},
-  {name:"Kodagu",state:"Karnataka"},{name:"Udupi",state:"Karnataka"},
-  {name:"Gadag",state:"Karnataka"},{name:"Haveri",state:"Karnataka"},
-  {name:"Koppal",state:"Karnataka"},{name:"Bagalkot",state:"Karnataka"},
-  {name:"Pune",state:"Maharashtra"},{name:"Nagpur",state:"Maharashtra"},
-  {name:"Nashik",state:"Maharashtra"},{name:"Kolhapur",state:"Maharashtra"},
-  {name:"Aurangabad",state:"Maharashtra"},{name:"Solapur",state:"Maharashtra"},
-  {name:"Ahmednagar",state:"Maharashtra"},{name:"Satara",state:"Maharashtra"},
-  {name:"Guntur",state:"Andhra Pradesh"},{name:"Krishna",state:"Andhra Pradesh"},
-  {name:"West Godavari",state:"Andhra Pradesh"},{name:"East Godavari",state:"Andhra Pradesh"},
-  {name:"Kurnool",state:"Andhra Pradesh"},{name:"Visakhapatnam",state:"Andhra Pradesh"},
-  {name:"Warangal",state:"Telangana"},{name:"Karimnagar",state:"Telangana"},
-  {name:"Medak",state:"Telangana"},{name:"Nalgonda",state:"Telangana"},
-  {name:"Ludhiana",state:"Punjab"},{name:"Amritsar",state:"Punjab"},
-  {name:"Patiala",state:"Punjab"},{name:"Jalandhar",state:"Punjab"},
-  {name:"Karnal",state:"Haryana"},{name:"Hisar",state:"Haryana"},
-  {name:"Rohtak",state:"Haryana"},{name:"Ambala",state:"Haryana"},
-  {name:"Kanpur",state:"Uttar Pradesh"},{name:"Agra",state:"Uttar Pradesh"},
-  {name:"Varanasi",state:"Uttar Pradesh"},{name:"Lucknow",state:"Uttar Pradesh"},
-  {name:"Patna",state:"Bihar"},{name:"Gaya",state:"Bihar"},
-  {name:"Muzaffarpur",state:"Bihar"},{name:"Darbhanga",state:"Bihar"},
-  {name:"Coimbatore",state:"Tamil Nadu"},{name:"Thanjavur",state:"Tamil Nadu"},
-  {name:"Madurai",state:"Tamil Nadu"},{name:"Salem",state:"Tamil Nadu"},
-  {name:"Jaipur",state:"Rajasthan"},{name:"Jodhpur",state:"Rajasthan"},
-  {name:"Kota",state:"Rajasthan"},{name:"Udaipur",state:"Rajasthan"},
-  {name:"Indore",state:"Madhya Pradesh"},{name:"Bhopal",state:"Madhya Pradesh"},
-  {name:"Jabalpur",state:"Madhya Pradesh"},{name:"Gwalior",state:"Madhya Pradesh"},
-  {name:"Raipur",state:"Chhattisgarh"},{name:"Bilaspur",state:"Chhattisgarh"},
-  {name:"Durg",state:"Chhattisgarh"}
-];
+var DISTRICTS = [];
 
 // ═══════════════════════════════════════════════════════
 // APP STATE
@@ -1083,6 +1124,8 @@ var activeCat  = "grains";
 var activeCrop = "rice";
 var appSt      = {district:"",year:2024,season:"Kharif",customTemp:null,customRain:null};
 var charts     = {};
+var MODEL_CATALOG = {districts:{},crop_history:{}};
+var activeChartSlide=0;
 var GRID="#1e3a5f", WTICK="#ffffff";
 
 function T(k){ return (TR[lang]||TR.en)[k] || TR.en[k] || k; }
@@ -1111,7 +1154,7 @@ function applyLang(){
   // season buttons
   document.getElementById("sb-kharif").textContent = T("kharif");
   document.getElementById("sb-rabi").textContent   = T("rabi");
-  document.getElementById("sb-zaid").textContent   = T("zaid");
+  document.getElementById("sb-summer").textContent = T("summer");
   document.getElementById("sb-whole").textContent  = T("whole");
   // chart panel titles
   document.getElementById("pt-trend").textContent  = T("ptTrend");
@@ -1155,9 +1198,9 @@ function updateChartLabels(){
   if (!charts.trend) return;
   var cat = CATEGORIES.find(function(c){return c.key===activeCat;});
   charts.trend.options.scales.y.title.text = T("yieldAxis");
-  charts.crop.data.labels = cat.crops.map(function(c){return T(c);});
+  charts.crop.data.labels = cat.crops.map(function(c){return datasetCropLabel(c);});
   charts.crop.options.scales.y.title.text  = T("yieldAxis");
-  charts.season.data.labels = [T("kharif"),T("rabi"),T("zaid"),T("whole")];
+  charts.season.data.labels = [T("kharif"),T("rabi"),T("summer"),T("whole")];
   charts.season.options.scales.x.title.text = T("yieldAxis");
   charts.env.data.labels = [T("envTemp"),T("envRain"),T("envHumid"),T("envN"),T("envPH"),T("envNPK")];
   charts.env.options.scales.x.title.text = T("normScore");
@@ -1198,21 +1241,29 @@ function buildCropButtons(){
   var cat  = CATEGORIES.find(function(c){return c.key===activeCat;});
   var wrap = document.getElementById("cropGrid");
   wrap.innerHTML="";
-  cat.crops.forEach(function(cropKey,i){
-    var col=cat.colors[i]||"#00e5a0";
-    var btn=document.createElement("button");
-    btn.className="crop-btn"+(cropKey===activeCrop?" crop-sel":"");
-    btn.textContent=T(cropKey);
-    btn.style.borderColor   = cropKey===activeCrop?col:var_border();
-    btn.style.color         = cropKey===activeCrop?col:"#ffffff";
-    btn.addEventListener("click",function(){
-      activeCrop=cropKey;
-      buildCropButtons();
-    });
-    wrap.appendChild(btn);
+  cat.crops.forEach(function(cropKey){
+    var option=document.createElement("option");
+    option.value=cropKey;
+    option.textContent=datasetCropLabel(cropKey);
+    option.selected=cropKey===activeCrop;
+    wrap.appendChild(option);
+  });
+  wrap.addEventListener("change",function(){
+    activeCrop=wrap.value;
   });
 }
 function var_border(){return "#1e3a5f";}
+
+function cropHistoryMean(crop){
+  var item=MODEL_CATALOG.crop_history&&MODEL_CATALOG.crop_history[crop];
+  return item?item.mean:(CROP_BASE[crop]?CROP_BASE[crop].mean:0);
+}
+
+function datasetCropLabel(crop){
+  if(MODEL_CATALOG.crop_labels&&MODEL_CATALOG.crop_labels[crop]) return MODEL_CATALOG.crop_labels[crop];
+  if(DATASET_CROP_LABELS[crop]) return DATASET_CROP_LABELS[crop];
+  return crop.replace(/_/g," ").replace(/\b\w/g,function(letter){return letter.toUpperCase();});
+}
 
 function setSeason(s){
   appSt.season=s;
@@ -1269,7 +1320,12 @@ function strHash(str){
 }
 function historicalTrend(dist,crop){
   var rng=mulberry32(strHash(dist+"|"+crop));
-  var base=CROP_BASE[crop];
+  var base=CROP_BASE[crop]||{
+    mean:cropHistoryMean(crop),
+    std:cropHistoryMean(crop)*0.2,
+    p05:cropHistoryMean(crop)*0.5,
+    p95:cropHistoryMean(crop)*1.5
+  };
   var years=[],yields=[];
   var val=base.mean*(0.65+rng()*0.35);
   for(var y=2001;y<=2023;y++){
@@ -1308,9 +1364,44 @@ function simulatePredict(district,crop,year,season,cT,cR){
 // INIT
 // ═══════════════════════════════════════════════════════
 function init(){
-  populateStates();
-  document.getElementById("districtSel").innerHTML=
-    '<option value="" disabled selected>'+T("selDistrict")+'</option>';
+  fetch("/api/catalog")
+    .then(function(response){return response.json();})
+    .then(function(catalog){
+      MODEL_CATALOG=catalog;
+      var grainNames=["rice","wheat","maize","ragi","jowar","sorghum","bajra","small_millets","barley","other_cereals"];
+      var pulseNames=["arhar_tur","chickpea","gram","horse_gram","moong","urad","masoor","cowpea","other_kharif_pulses","other_rabi_pulses","peas_beans_pulses"];
+      var oilNames=["groundnut","soybean","soyabean","sunflower","sesamum","castor_seed","linseed","safflower","niger_seed","rapeseed_mustard"];
+      var cashNames=["cotton","sugarcane","sugarcane","jute","mesta","tobacco","turmeric","ginger","arecanut","coconut","black_pepper","cardamom","dry_ginger","coriander","garlic","dry_chillies"];
+      var cropNames=catalog.crops||[];
+      var inList=function(names,c){return names.indexOf(c)>=0;};
+      var classified=cropNames.filter(function(c){
+        return inList(grainNames,c)||inList(pulseNames,c)||inList(oilNames,c)||inList(cashNames,c);
+      });
+      var byCategory=[
+        {key:"grains",labelKey:"catGrains",crops:cropNames.filter(function(c){return inList(grainNames,c);}),colors:["#00e5a0","#f5a623","#d4a017","#e8c96a","#b87333","#ffd700","#cd853f","#8fbc8f","#bdb76b","#7fb3d5"]},
+        {key:"pulses",labelKey:"catCash",crops:cropNames.filter(function(c){return inList(pulseNames,c);}),colors:["#9f7ffe","#d4a017","#cd853f","#b87333","#7fb3d5","#8fbc8f","#dda0dd","#ff7043","#9c27b0","#e5a820","#66bb6a"]},
+        {key:"oilseeds",labelKey:"catCash",crops:cropNames.filter(function(c){return inList(oilNames,c);}),colors:["#3b9eff","#8fbc8f","#66bb6a","#ffd700","#d4a017","#e5a820","#c8a97e","#ff8c42","#b87333","#ffcc02"]},
+        {key:"cash",labelKey:"catCash",crops:cropNames.filter(function(c){return inList(cashNames,c);}),colors:["#3b9eff","#00d4c8","#2dba4e","#ff5f7e","#e5a820","#c8a97e","#66bb6a","#8d6e63","#00e5a0","#ffcc02","#ff7043","#dda0dd","#ff9500","#ff3300"]},
+        {key:"other",labelKey:"catVeg",crops:cropNames.filter(function(c){return classified.indexOf(c)<0;}),colors:["#ff5f7e","#87ceeb","#b8860b","#ff9800","#228b22","#ff6eb4","#dda0dd","#66bb6a","#ff7043","#9c27b0"]}
+      ];
+      CATEGORIES=byCategory.filter(function(category){return category.crops.length>0;});
+      activeCat=CATEGORIES[0].key;
+      activeCrop=CATEGORIES[0].crops[0];
+      buildCatTabs();
+      buildCropButtons();
+      DISTRICTS=[];
+      Object.keys(catalog.districts).sort().forEach(function(state){
+        catalog.districts[state].forEach(function(district){
+          DISTRICTS.push({name:district,state:state});
+        });
+      });
+      populateStates();
+      document.getElementById("districtSel").innerHTML=
+        '<option value="" disabled selected>'+T("selDistrict")+'</option>';
+    })
+    .catch(function(){
+      document.getElementById("statusText").textContent="Dataset catalog unavailable";
+    });
   buildCatTabs();
   buildCropButtons();
   setSeason("Kharif");
@@ -1356,6 +1447,7 @@ function init(){
   document.getElementById("predictBtn").addEventListener("click",runPrediction);
 
   initCharts();
+  initChartSlider();
   applyLang();
 }
 
@@ -1368,16 +1460,41 @@ function riskLabel(r){
 function runPrediction(){
   if(!appSt.district){alert(T("alertDistrict"));return;}
   document.getElementById("loadingOverlay").classList.add("show");
-  setTimeout(function(){
-    var di=DISTRICTS.find(function(d){return d.name===appSt.district;});
-    var res=simulatePredict(appSt.district,activeCrop,appSt.year,appSt.season,appSt.customTemp,appSt.customRain);
+  var di=DISTRICTS.find(function(d){return d.name===appSt.district;});
+  var state=(di&&di.state)||document.getElementById("stateSel").value;
+  fetch("/api/predict",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      crop:activeCrop,
+      state:state,
+      district:appSt.district,
+      year:appSt.year,
+      season:appSt.season,
+      temperature:appSt.customTemp,
+      rain:appSt.customRain
+    })
+  }).then(function(response){
+    if(!response.ok) throw new Error("Prediction API request failed");
+    return response.json();
+  }).then(function(apiRes){
+    var res={
+      predicted:apiRes.predicted,
+      ci_low:apiRes.ci_low,
+      ci_high:apiRes.ci_high,
+      mean:apiRes.mean,
+      pct_vs_avg:apiRes.pct_vs_avg,
+      risk:apiRes.risk,
+      mape:apiRes.mape,
+      env:{temp:appSt.customTemp||25,rain:appSt.customRain||800,humid:65,N:80,P:50,K:60,pH:6.5}
+    };
     document.getElementById("loadingOverlay").classList.remove("show");
 
     var rc=RISK_COLORS[res.risk];
     var ps=res.pct_vs_avg>=0?"+":"";
     var unit=T("yieldUnit");
-    var cropName=T(activeCrop);
-    var seasonName=T(appSt.season==="Kharif"?"kharif":appSt.season==="Rabi"?"rabi":appSt.season==="Zaid"?"zaid":"whole");
+    var cropName=datasetCropLabel(activeCrop);
+    var seasonName=appSt.season;
 
     document.getElementById("resYield").textContent  = res.predicted.toLocaleString()+" "+unit;
     document.getElementById("resYield").style.color  = rc;
@@ -1421,12 +1538,45 @@ function runPrediction(){
     document.getElementById("statusInfo").textContent = riskLabel(res.risk)+"  |  MAPE: "+res.mape+"%";
 
     updateCharts(res);
-  },650);
+  }).catch(function(error){
+    document.getElementById("loadingOverlay").classList.remove("show");
+    alert(error.message+". Start the model server with: python app.py");
+  });
 }
 
 // ═══════════════════════════════════════════════════════
 // CHARTS
 // ═══════════════════════════════════════════════════════
+function initChartSlider(){
+  var names=["Trend & Prediction","Crop & Season","Growing Conditions"];
+  function showSlide(index){
+    activeChartSlide=(index+3)%3;
+    document.getElementById("chartTrack").style.transform="translateX(-"+(activeChartSlide*100)+"%)";
+    document.querySelectorAll(".slide-dot").forEach(function(dot,i){
+      dot.classList.toggle("active",i===activeChartSlide);
+    });
+    document.getElementById("slideName").textContent=names[activeChartSlide];
+    setTimeout(function(){
+      Object.keys(charts).forEach(function(key){
+        if(charts[key]&&typeof charts[key].resize==="function")charts[key].resize();
+      });
+    },380);
+  }
+  document.getElementById("slidePrev").addEventListener("click",function(){showSlide(activeChartSlide-1);});
+  document.getElementById("slideNext").addEventListener("click",function(){showSlide(activeChartSlide+1);});
+  document.querySelectorAll(".slide-dot").forEach(function(dot){
+    dot.addEventListener("click",function(){
+      showSlide(parseInt(dot.getAttribute("data-slide"),10));
+    });
+  });
+  document.getElementById("chartViewport").addEventListener("keydown",function(event){
+    if(event.key==="ArrowLeft")showSlide(activeChartSlide-1);
+    if(event.key==="ArrowRight")showSlide(activeChartSlide+1);
+  });
+  document.getElementById("chartViewport").tabIndex=0;
+  showSlide(0);
+}
+
 function initCharts(){
   Chart.defaults.color="#ccc";
   Chart.defaults.font.size=12;
@@ -1473,7 +1623,7 @@ function initCharts(){
 
   charts.season=new Chart(document.getElementById("seasonChart"),{
     type:"bar",
-    data:{labels:[T("kharif"),T("rabi"),T("zaid"),T("whole")],datasets:[{data:[0,0,0,0],backgroundColor:"#2a4a70",borderWidth:0,borderRadius:3}]},
+    data:{labels:["Kharif","Rabi","Summer","Whole Year"],datasets:[{data:[0,0,0,0],backgroundColor:"#2a4a70",borderWidth:0,borderRadius:3}]},
     options:{
       indexAxis:"y",responsive:true,maintainAspectRatio:false,animation:{duration:600},
       plugins:{legend:{display:false},tooltip:{padding:8,bodyFont:{size:11}}},
@@ -1558,9 +1708,9 @@ function updateCharts(res){
   gb.textContent=riskLabel(res.risk); gb.className="risk-badge risk-"+res.risk;
 
   // ── Crop comparison (whole active category) ──
-  charts.crop.data.labels=cat.crops.map(function(c){return T(c);});
+  charts.crop.data.labels=cat.crops.map(function(c){return datasetCropLabel(c);});
   charts.crop.data.datasets[0].data=cat.crops.map(function(c){
-    return simulatePredict(appSt.district,c,appSt.year,appSt.season,appSt.customTemp,appSt.customRain).predicted;
+    return cropHistoryMean(c);
   });
   charts.crop.data.datasets[0].backgroundColor=cat.crops.map(function(c,i){
     return c===activeCrop?cat.colors[i]:cat.colors[i]+"60";
@@ -1569,10 +1719,11 @@ function updateCharts(res){
   charts.crop.update();
 
   // ── Season comparison ──
-  var seasons=["Kharif","Rabi","Zaid","Whole Year"];
-  charts.season.data.labels=[T("kharif"),T("rabi"),T("zaid"),T("whole")];
+  var seasons=["Kharif","Rabi","Summer","Whole Year"];
+  charts.season.data.labels=seasons;
   charts.season.data.datasets[0].data=seasons.map(function(s){
-    return simulatePredict(appSt.district,activeCrop,appSt.year,s,appSt.customTemp,appSt.customRain).predicted;
+    var factor=SEASON_FACTORS[s]||1;
+    return Math.round(cropHistoryMean(activeCrop)*factor);
   });
   charts.season.data.datasets[0].backgroundColor=seasons.map(function(s){
     return s===appSt.season?"#00d4c8":"#2a4a70";
@@ -1890,7 +2041,7 @@ function downloadPDF(){
     var locPara="The selected location, "+distName+" in "+stateName+", has been matched against its historical production profile. District-specific yield adjustment factors ("+Math.round((0.75+(strHash(appSt.district)%50)/100)*100)+"% of baseline) account for local soil quality, irrigation coverage, and agricultural infrastructure.";
     bodyText(locPara);
 
-    var seasonPara="The "+seasonName+" season carries a yield multiplier of "+SEASON_FACTORS[appSt.season]+"x relative to the whole-year baseline. "+(appSt.season==="Kharif"?"Kharif (June–September) benefits from monsoon rainfall and is the primary growing season for most cereals and pulses.":appSt.season==="Rabi"?"Rabi (October–December sown, spring harvested) yields slightly lower due to cooler temperatures and reliance on irrigation.":appSt.season==="Zaid"?"Zaid is a short summer period between Rabi and Kharif; heat stress and limited water typically reduce volumes.":"The whole-year aggregate applies a neutral multiplier across continuous or multi-seasonal cultivation.");
+    var seasonPara="The "+seasonName+" season carries a yield multiplier of "+SEASON_FACTORS[appSt.season]+"x relative to the whole-year baseline. "+(appSt.season==="Kharif"?"Kharif (June–September) benefits from monsoon rainfall and is the primary growing season for most cereals and pulses.":appSt.season==="Rabi"?"Rabi (October–December sown, spring harvested) yields slightly lower due to cooler temperatures and reliance on irrigation.":appSt.season==="Summer"?"Summer is a hot-season period in the source dataset; heat stress and limited water may reduce yields.":"The whole-year aggregate applies a neutral multiplier across continuous or multi-seasonal cultivation.");
     bodyText(seasonPara);
 
     // ─────────────────────────────────────────────────────
@@ -2024,7 +2175,7 @@ function downloadPDF(){
 
     bodyText("CropSight AI uses a VotingRegressor ensemble combining three estimators: Histogram-based Gradient Boosting Regression (HGBR), Random Forest Regression (RF), and Ridge Regression. Each estimator is trained on district-level crop yield records from 2001–2023 sourced from national agricultural databases. Ensemble averaging reduces variance and improves generalisation across diverse agro-climatic zones.");
 
-    bodyText("Temporal trend modelling applies a linear growth factor of 0.6% per year to account for technology adoption. Season-specific multipliers (Kharif: 1.05×, Rabi: 0.97×, Zaid: 0.90×, Whole Year: 1.00×) adjust for seasonal conditions. District factors (0.75–1.25) capture local agronomic and infrastructural variation. Climate override inputs trigger additional modifiers when they deviate from the crop's optimal profile.");
+    bodyText("Temporal trend modelling applies a linear growth factor of 0.6% per year to account for technology adoption. Season-specific multipliers (Kharif: 1.05×, Rabi: 0.97×, Summer: 0.90×, Whole Year: 1.00×) adjust for seasonal conditions. District factors (0.75–1.25) capture local agronomic and infrastructural variation. Climate override inputs trigger additional modifiers when they deviate from the crop's optimal profile.");
 
     bodyText("The reported MAPE of "+r.mape+"% represents average absolute percentage deviation of model predictions from actual recorded yields in the validation dataset. Confidence intervals are derived from the crop's historical standard deviation and represent the range within which actual yield is expected to fall with 95% probability.");
 

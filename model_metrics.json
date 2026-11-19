@@ -1,0 +1,311 @@
+{
+  "source": [
+    "ICRISAT-District Level Data.csv",
+    "horizontal_crop_vertical_year_report.xls"
+  ],
+  "target_unit": "kg/hectare",
+  "test_period": "2013-2017",
+  "crops": {
+    "arecanut": {
+      "train_rows": 286,
+      "test_rows": 107,
+      "mae": 1336.31,
+      "mape": 12.88,
+      "r2": -0.2177
+    },
+    "arhar_tur": {
+      "train_rows": 394,
+      "test_rows": 135,
+      "mae": 227.51,
+      "mape": 47.71,
+      "r2": 0.1186
+    },
+    "bajra": {
+      "train_rows": 306,
+      "test_rows": 108,
+      "mae": 296.86,
+      "mape": 30.44,
+      "r2": -0.0287
+    },
+    "black_pepper": {
+      "train_rows": 195,
+      "test_rows": 85,
+      "mae": 1564.06,
+      "mape": 245.8,
+      "r2": -3.3005
+    },
+    "cardamom": {
+      "train_rows": 99,
+      "test_rows": 35,
+      "mae": 22.52,
+      "mape": 25.34,
+      "r2": -0.0048
+    },
+    "cashewnut": {
+      "train_rows": 111,
+      "test_rows": 102,
+      "mae": 367.14,
+      "mape": 62.69,
+      "r2": -0.1672
+    },
+    "castor_seed": {
+      "train_rows": 328,
+      "test_rows": 109,
+      "mae": 225.22,
+      "mape": 48.57,
+      "r2": 0.0016
+    },
+    "chickpea": {
+      "train_rows": 12530,
+      "test_rows": 1339,
+      "mae": 276.84,
+      "mape": 38.84,
+      "r2": 0.1242
+    },
+    "coriander": {
+      "train_rows": 323,
+      "test_rows": 92,
+      "mae": 142.36,
+      "mape": 40.79,
+      "r2": -2.8402
+    },
+    "cotton": {
+      "train_rows": 7095,
+      "test_rows": 721,
+      "mae": 211.81,
+      "mape": 1406.3,
+      "r2": 0.0425
+    },
+    "cowpea": {
+      "train_rows": 180,
+      "test_rows": 330,
+      "mae": 132.5,
+      "mape": 77.93,
+      "r2": -0.0145
+    },
+    "dry_chillies": {
+      "train_rows": 784,
+      "test_rows": 407,
+      "mae": 984.07,
+      "mape": 99.88,
+      "r2": -1.2755
+    },
+    "garlic": {
+      "train_rows": 225,
+      "test_rows": 79,
+      "mae": 577.55,
+      "mape": 56.0,
+      "r2": -0.5523
+    },
+    "ginger": {
+      "train_rows": 277,
+      "test_rows": 109,
+      "mae": 6412.2,
+      "mape": 20.61,
+      "r2": -1.086
+    },
+    "gram": {
+      "train_rows": 407,
+      "test_rows": 128,
+      "mae": 215.51,
+      "mape": 82.96,
+      "r2": -0.1359
+    },
+    "groundnut": {
+      "train_rows": 11681,
+      "test_rows": 1430,
+      "mae": 418.45,
+      "mape": 38.33,
+      "r2": 0.2961
+    },
+    "horse_gram": {
+      "train_rows": 802,
+      "test_rows": 257,
+      "mae": 185.72,
+      "mape": 121.19,
+      "r2": 0.1027
+    },
+    "jowar": {
+      "train_rows": 853,
+      "test_rows": 257,
+      "mae": 435.73,
+      "mape": 49.34,
+      "r2": 0.1284
+    },
+    "linseed": {
+      "train_rows": 198,
+      "test_rows": 59,
+      "mae": 122.77,
+      "mape": 119.63,
+      "r2": -0.0178
+    },
+    "maize": {
+      "train_rows": 13893,
+      "test_rows": 1834,
+      "mae": 873.81,
+      "mape": 38.13,
+      "r2": 0.2199
+    },
+    "moong": {
+      "train_rows": 583,
+      "test_rows": 196,
+      "mae": 86.47,
+      "mape": 52.67,
+      "r2": -0.0229
+    },
+    "niger_seed": {
+      "train_rows": 357,
+      "test_rows": 118,
+      "mae": 99.21,
+      "mape": 50.17,
+      "r2": -4.5575
+    },
+    "onion": {
+      "train_rows": 700,
+      "test_rows": 349,
+      "mae": 3413.78,
+      "mape": 52.97,
+      "r2": -0.374
+    },
+    "other_kharif_pulses": {
+      "train_rows": 355,
+      "test_rows": 125,
+      "mae": 517.85,
+      "mape": 115.86,
+      "r2": -0.0318
+    },
+    "other_rabi_pulses": {
+      "train_rows": 346,
+      "test_rows": 86,
+      "mae": 233.1,
+      "mape": 184.92,
+      "r2": -0.1381
+    },
+    "potato": {
+      "train_rows": 362,
+      "test_rows": 204,
+      "mae": 4035.53,
+      "mape": 41.71,
+      "r2": -0.0476
+    },
+    "ragi": {
+      "train_rows": 6145,
+      "test_rows": 717,
+      "mae": 363.65,
+      "mape": 34.44,
+      "r2": 0.4773
+    },
+    "rapeseed_mustard": {
+      "train_rows": 256,
+      "test_rows": 75,
+      "mae": 133.97,
+      "mape": 71.35,
+      "r2": -3.7226
+    },
+    "rice": {
+      "train_rows": 14640,
+      "test_rows": 1746,
+      "mae": 453.79,
+      "mape": 30.6,
+      "r2": 0.5816
+    },
+    "safflower": {
+      "train_rows": 222,
+      "test_rows": 69,
+      "mae": 245.78,
+      "mape": 86.1,
+      "r2": 0.0706
+    },
+    "sesamum": {
+      "train_rows": 386,
+      "test_rows": 131,
+      "mae": 226.67,
+      "mape": 60.2,
+      "r2": -0.026
+    },
+    "small_millets": {
+      "train_rows": 264,
+      "test_rows": 99,
+      "mae": 205.13,
+      "mape": 40.18,
+      "r2": 0.0479
+    },
+    "sorghum": {
+      "train_rows": 10539,
+      "test_rows": 1026,
+      "mae": 393.4,
+      "mape": 47.91,
+      "r2": 0.2013
+    },
+    "soyabean": {
+      "train_rows": 176,
+      "test_rows": 43,
+      "mae": 421.18,
+      "mape": 38.07,
+      "r2": -1.0483
+    },
+    "soybean": {
+      "train_rows": 3410,
+      "test_rows": 693,
+      "mae": 373.37,
+      "mape": 63.73,
+      "r2": 0.0162
+    },
+    "sugarcane": {
+      "train_rows": 12660,
+      "test_rows": 1338,
+      "mae": 6219.73,
+      "mape": 128.32,
+      "r2": 0.6805
+    },
+    "sunflower": {
+      "train_rows": 5277,
+      "test_rows": 950,
+      "mae": 288.22,
+      "mape": 62.26,
+      "r2": 0.4415
+    },
+    "sweet_potato": {
+      "train_rows": 190,
+      "test_rows": 74,
+      "mae": 2841.79,
+      "mape": 27.0,
+      "r2": -0.2247
+    },
+    "tapioca": {
+      "train_rows": 103,
+      "test_rows": 47,
+      "mae": 2310.7,
+      "mape": 31.15,
+      "r2": -1.88
+    },
+    "tobacco": {
+      "train_rows": 189,
+      "test_rows": 46,
+      "mae": 138.6,
+      "mape": 15.95,
+      "r2": 0.283
+    },
+    "turmeric": {
+      "train_rows": 321,
+      "test_rows": 94,
+      "mae": 966.24,
+      "mape": 22.34,
+      "r2": 0.1361
+    },
+    "urad": {
+      "train_rows": 485,
+      "test_rows": 182,
+      "mae": 114.31,
+      "mape": 45.42,
+      "r2": 0.0775
+    },
+    "wheat": {
+      "train_rows": 12669,
+      "test_rows": 1382,
+      "mae": 586.36,
+      "mape": 35.89,
+      "r2": 0.6105
+    }
+  }
+}
