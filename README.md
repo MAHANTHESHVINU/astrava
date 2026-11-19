@@ -2,10 +2,6 @@
 
 CropSight AI is a trained crop-yield prediction dashboard built with Flask, scikit-learn, Chart.js, and the ICRISAT district-level datasets.
 
-## Live dashboard
-
-https://cropsight-ai.onrender.com
-
 The dashboard provides:
 
 - 43 crop yield models where sufficient data is available
@@ -59,9 +55,9 @@ Example prediction request:
 ## Deploy to Render
 
 1. Push this repository to GitHub.
-2. Use the deployment button below.
-
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/MAHANTHESHVINU/astrava)
+2. Open [Render Blueprints](https://dashboard.render.com/blueprints).
+3. Select **New Blueprint** and choose this repository.
+4. Render will read `render.yaml`, install `requirements.txt`, and start `gunicorn app:app`.
 
 The service health endpoint is `/health`.
 

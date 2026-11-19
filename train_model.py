@@ -6,7 +6,6 @@ import joblib
 import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer
 from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_absolute_error, mean_absolute_percentage_error, r2_score
 from sklearn.pipeline import Pipeline
@@ -157,10 +156,7 @@ def train():
 
         preprocessor = ColumnTransformer([
             ("category", OneHotEncoder(handle_unknown="ignore"), categorical),
-            ("number", Pipeline([
-                ("impute", SimpleImputer(strategy="median")),
-                ("scale", StandardScaler()),
-            ]), numeric),
+            ("number", StandardScaler(), numeric),
         ])
 
         ridge = Pipeline([
